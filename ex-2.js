@@ -5,17 +5,22 @@ const studentScoresRoom3 = [67, 80, 100, 15, 12, 40, 67, 80, 100, 67];
 
 function checkGradeOver70(score) {
   // Start coding here
+  return (score>70) ? true : false;
 }
 
 function atLeastFive(array, operation) {
   // Start coding here
+  let result = 0;
+  for(let i = 0; i < array.length; i++){
+   result = ((operation(array[i]))? 1 : 0)+ result;
+  }
+  return (result>=5) ? true: false;
 }
 
 // Using `atLeastFive` function here
-let scoreRoom1Result;
-let scoreRoom2Result;
-let scoreRoom3Result;
-
+let scoreRoom1Result = atLeastFive(studentScoresRoom1,checkGradeOver70);
+let scoreRoom2Result = atLeastFive(studentScoresRoom2,checkGradeOver70);
+let scoreRoom3Result = atLeastFive(studentScoresRoom3,checkGradeOver70);
 console.log(scoreRoom1Result); //true
 console.log(scoreRoom2Result); //false
 console.log(scoreRoom3Result); //false
@@ -24,8 +29,11 @@ console.log(scoreRoom3Result); //false
 ====================================
 
 1. ใน Exercise นี้ ฟังก์ชันใดเป็น Callback Function?
+checkGradeOver70 มีแทนค่า เป็นargument ตอนexecuteครั้งแรก 
+ในฟังชั่นมีพารามิเตอตัวเดียว มีการเรียกใช้เป็นอันดับหลัง
 
 2. ใน Exercise นี้ ฟังก์ชันใดเป็น Higher Order Function?
+atLeastFive argument ไปแทนค่าพารามิเตอเป็นฟังชั่นแรกมีการเรียกใช้งานฟังชั่นด้านใน
 
 ====================================
 */
